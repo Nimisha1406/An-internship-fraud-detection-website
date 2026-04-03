@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            text-align: center;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+        }
+        textarea, input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            background: #ff758c;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Internship Fraud Detector</h2>
+
+    <h2>Upload Job Message</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+    <h3>Upload Image</h3>
+    <input type="file" name="file"><br><br>
+
+    <h3>OR Type Message</h3>
+    <textarea name="text_input" rows="6" placeholder="Paste job message here..."></textarea><br><br>
+
+    <button type="submit">Check Fraud</button>
+
+</form>
+
+{% if result %}
+    <h3>Result: {{ result }}({{ confidence }}%)</h3>
+    <p><b>Extracted Stipend:</b> {{ stipend }}</p>
+    <p><b>Extracted Fee:</b> {{ fee }}</p>
+    <p><b>Extracted Message:</b></p>
+    <pre style="white-space: pre-wrap;">{{ extracted_text }}</pre>
+{% endif %} 
+
+</div>
+
+</body>
+</html>
