@@ -12,11 +12,7 @@ It also extracts important details like stipend and fee.
 5.Shows result with confidence
 
 🛠️ Technologies Used
--Python, Flask
--HTML, CSS
--SQLite
--Scikit-learn
--Tesseract OCR
+Python, Flask, HTML, CSS, SQLite, Scikit-learn, Tesseract OCR
 
 ⚙️ How to Run
 Install requirements
